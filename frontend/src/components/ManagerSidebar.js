@@ -8,7 +8,7 @@ const menuItems = [
   { path: '/manager/attendance', label: 'Attendance', icon: '📋' },
   { path: '/manager/calendar', label: 'Calendar', icon: '📅' },
   { path: '/manager/reports', label: 'Reports', icon: '📈' },
-  { path: '/profile', label: 'Profile', icon: '👤' },
+  { path: '/manager/profile', label: 'Profile', icon: '👤' },
 ];
 
 export default function ManagerSidebar({ onNavigate }) {

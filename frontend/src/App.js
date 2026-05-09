@@ -13,6 +13,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import Navbar from './components/Navbar';
 import ManagerLayout from './components/ManagerLayout';
 import EmployeeLayout from './components/EmployeeLayout';
+import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
   React.useEffect(() => {
@@ -55,6 +56,14 @@ function App() {
             </EmployeeLayout>
           </ProtectedRoute>
         } />
+        {/* Manager profile route */}
+        <Route path="/manager/profile" element={
+          <ProtectedRoute>
+            <ManagerLayout>
+              <Profile />
+            </ManagerLayout>
+          </ProtectedRoute>
+        } />
 
         {/* Manager routes wrapped with enterprise sidebar layout */}
         <Route path="/manager/dashboard" element={
@@ -85,6 +94,8 @@ function App() {
             </ManagerLayout>
           </ProtectedRoute>
         } />
+        {/* Catch-all route for 404 */}
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>
   );
